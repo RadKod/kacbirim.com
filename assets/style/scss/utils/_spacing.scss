@@ -6,20 +6,36 @@
   margin: 0 !important;
 }
 
-.pl-0 {
-  padding-left: 0 !important;
+.pt-0 {
+  padding-top: 0 !important;
 }
 
 .pr-0 {
   padding-right: 0 !important;
 }
 
-.ml-0 {
-  margin-left: 0 !important;
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.pl-0 {
+  padding-left: 0 !important;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
 }
 
 .mr-0 {
   margin-right: 0 !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.ml-0 {
+  margin-left: 0 !important;
 }
 
 .px-0 {
@@ -55,6 +71,58 @@
   margin-right: auto !important;
 }
 
+.mx-base {
+  margin-right: var(--base-m-x) !important;
+  margin-left: var(--base-m-x) !important;
+}
+
+.my-base {
+  margin-top: var(--base-m-y) !important;
+  margin-bottom: var(--base-m-y) !important;
+}
+
+.mt-base {
+  margin-top: var(--base-m-y) !important;
+}
+
+.mr-base {
+  margin-right: var(--base-m-x) !important;
+}
+
+.mb-base {
+  margin-bottom: var(--base-m-y) !important;
+}
+
+.ml-base {
+  margin-left: var(--base-m-x) !important;
+}
+
+.px-base {
+  padding-right: var(--base-p-x) !important;
+  padding-left: var(--base-p-x) !important;
+}
+
+.py-base {
+  padding-top: var(--base-p-y) !important;
+  padding-bottom: var(--base-p-y) !important;
+}
+
+.pt-base {
+  padding-top: var(--base-p-y) !important;
+}
+
+.pr-base {
+  padding-right: var(--base-m-x) !important;
+}
+
+.pb-base {
+  padding-bottom: var(--base-p-y) !important;
+}
+
+.pl-base {
+  padding-left: var(--base-m-x) !important;
+}
+
 @mixin spacing($mq-breakpoint) {
   .p-#{$mq-breakpoint}-0 {
     padding: 0 !important;
@@ -64,20 +132,36 @@
     margin: 0 !important;
   }
 
-  .pl-#{$mq-breakpoint}-0 {
-    padding-left: 0 !important;
+  .pt-#{$mq-breakpoint}-0 {
+    padding-top: 0 !important;
   }
 
   .pr-#{$mq-breakpoint}-0 {
     padding-right: 0 !important;
   }
 
-  .ml-#{$mq-breakpoint}-0 {
-    margin-left: 0 !important;
+  .pb-#{$mq-breakpoint}-0 {
+    padding-bottom: 0 !important;
+  }
+
+  .pl-#{$mq-breakpoint}-0 {
+    padding-left: 0 !important;
+  }
+
+  .mt-#{$mq-breakpoint}-0 {
+    margin-top: 0 !important;
   }
 
   .mr-#{$mq-breakpoint}-0 {
     margin-right: 0 !important;
+  }
+
+  .mb-#{$mq-breakpoint}-0 {
+    margin-bottom: 0 !important;
+  }
+
+  .ml-#{$mq-breakpoint}-0 {
+    margin-left: 0 !important;
   }
 
   .px-#{$mq-breakpoint}-0 {
@@ -111,6 +195,58 @@
 
   .mr-#{$mq-breakpoint}-auto {
     margin-right: auto !important;
+  }
+
+  .mx-#{$mq-breakpoint}-base {
+    margin-right: var(--base-m-x) !important;
+    margin-left: var(--base-m-x) !important;
+  }
+
+  .my-#{$mq-breakpoint}-base {
+    margin-top: var(--base-m-y) !important;
+    margin-bottom: var(--base-m-y) !important;
+  }
+
+  .mt-#{$mq-breakpoint}-base {
+    margin-top: var(--base-m-y) !important;
+  }
+
+  .mb-#{$mq-breakpoint}-base {
+    margin-bottom: var(--base-m-y) !important;
+  }
+
+  .ml-#{$mq-breakpoint}-base {
+    margin-left: var(--base-m-x) !important;
+  }
+
+  .mr-#{$mq-breakpoint}-base {
+    margin-right: var(--base-m-x) !important;
+  }
+
+  .px-#{$mq-breakpoint}-base {
+    padding-right: var(--base-p-x) !important;
+    padding-left: var(--base-p-x) !important;
+  }
+
+  .py-#{$mq-breakpoint}-base {
+    padding-top: var(--base-p-y) !important;
+    padding-bottom: var(--base-p-y) !important;
+  }
+
+  .pt-#{$mq-breakpoint}-base {
+    padding-top: var(--base-p-y) !important;
+  }
+
+  .pb-#{$mq-breakpoint}-base {
+    padding-bottom: var(--base-p-y) !important;
+  }
+
+  .pl-#{$mq-breakpoint}-base {
+    padding-left: var(--base-m-x) !important;
+  }
+
+  .pr-#{$mq-breakpoint}-base {
+    padding-right: var(--base-m-x) !important;
   }
 }
 

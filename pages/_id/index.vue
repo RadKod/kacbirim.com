@@ -1,11 +1,11 @@
 <template lang="pug">
-.page.page--main
-  main-feed-post-list
+.page.page--post-detail
+  post-card
 </template>
 
 <script>
 export default {
-  layout: 'main'
+  layout: 'post-detail'
 }
 </script>
 

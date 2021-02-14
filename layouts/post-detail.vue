@@ -1,14 +1,15 @@
 <template lang="pug">
-.layout.layout--default-layout
+.layout.layout--main-layout
   // APP Preloader
   app-preloader
   // Header
   app-header
-  // Router View
-  main.layout__routerViewWrapper
-    nuxt
-  // Footer
-  app-footer
+  .container
+    .layout__columnsWrapper
+      vs-row
+        // Router View
+        main.layout__routerViewWrapper
+          nuxt
 </template>
 
 <script>
@@ -17,7 +18,9 @@ export default {}
 
 <style lang="scss">
 .layout {
-  &--default-layout {
+  $bcn: &;
+
+  &--post-detail-layout {
     position: relative;
   }
 }

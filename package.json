@@ -45,7 +45,11 @@
   "dependencies": {
     "cross-env": "^5.2.0",
     "express": "^4.17.1",
-    "nuxt": "^2.14.12"
+    "material-icons": "^0.5.3",
+    "nuxt": "^2.14.12",
+    "vue-auto-text": "^1.0.4",
+    "vue-resize-text": "^0.1.1",
+    "vuesax": "3.12.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-module": "^3.0.0",
