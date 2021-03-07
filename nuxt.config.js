@@ -33,7 +33,6 @@ export default {
   styleResources: {
     scss: [
       // Plugins
-      '~/assets/style/scss/plugins/_browserhack.scss', // Doc: https://github.com/selimdoyranli/browser-hack-sass-mixins
       '~/assets/style/scss/plugins/_breakpoint.scss',
       '~/assets/style/scss/plugins/_mq.scss', // Doc: https://github.com/sass-mq/sass-mq
       // Functions
@@ -59,7 +58,11 @@ export default {
    */
   plugins: [
     {
-      src: '@/plugins/vuesax.js'
+      src: '@/plugins/vuesax.js' // https://lusaxweb.github.io/vuesax
+    },
+    {
+      src: '@/plugins/vue-sticky-directive.js', // https://www.npmjs.com/package/vue-sticky-directive
+      ssr: false
     }
   ],
 
@@ -67,7 +70,17 @@ export default {
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
    */
-  components: true,
+  components: [
+    '~/components',
+    '~/components/card',
+    '~/components/footer',
+    '~/components/header',
+    '~/components/loader',
+    '~/components/logo',
+    '~/components/post-list',
+    '~/components/spinner',
+    '~/components/widget'
+  ],
 
   /*
    ** Nuxt.js dev-modules

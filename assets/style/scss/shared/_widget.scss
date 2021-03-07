@@ -1,0 +1,15 @@
+.widget {
+  display: block;
+
+  &__title {
+    display: block;
+    color: var(--color-text-01);
+    font-size: 18px;
+  }
+
+  &__description {
+    padding: 0 calc(var(--base-p-x) / 2);
+    color: var(--color-text-03);
+    font-size: 14px;
+  }
+}

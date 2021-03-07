@@ -1,267 +1,276 @@
-.p-0 {
-  padding: 0 !important;
-}
+// Margin Y
+@mixin m-spacer-y($breakpoint: null) {
+  $margin-spacer-y: var(--base-m-y);
 
-.m-0 {
-  margin: 0 !important;
-}
+  $margin-spacers-y: (
+    base: $margin-spacer-y,
+    auto: auto,
+    0: 0,
+    1: $margin-spacer-y,
+    2: (
+      calc(#{$margin-spacer-y} * 2)
+    ),
+    3: (
+      calc(#{$margin-spacer-y} * 3)
+    ),
+    4: (
+      calc(#{$margin-spacer-y} * 4)
+    ),
+    5: (
+      calc(#{$margin-spacer-y} * 5)
+    )
+  );
 
-.pt-0 {
-  padding-top: 0 !important;
-}
+  $margin-directions-y: (
+    top: t,
+    bottom: b
+  );
 
-.pr-0 {
-  padding-right: 0 !important;
-}
+  $prefix: m;
 
-.pb-0 {
-  padding-bottom: 0 !important;
-}
+  @each $prop, $letter in (margin: $prefix) {
+    @each $direction, $d in $margin-directions-y {
+      @each $unit, $rem in $margin-spacers-y {
+        @if $breakpoint {
+          .#{$letter}#{$d}-#{$breakpoint}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        } @else {
+          .#{$letter}#{$d}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        }
+      }
+    }
 
-.pl-0 {
-  padding-left: 0 !important;
-}
-
-.mt-0 {
-  margin-top: 0 !important;
-}
-
-.mr-0 {
-  margin-right: 0 !important;
-}
-
-.mb-0 {
-  margin-bottom: 0 !important;
-}
-
-.ml-0 {
-  margin-left: 0 !important;
-}
-
-.px-0 {
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-}
-
-.py-0 {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.mx-0 {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
-
-.my-0 {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.mx-auto {
-  margin-right: auto !important;
-  margin-left: auto !important;
-}
-
-.ml-auto {
-  margin-left: auto !important;
-}
-
-.mr-auto {
-  margin-right: auto !important;
-}
-
-.mx-base {
-  margin-right: var(--base-m-x) !important;
-  margin-left: var(--base-m-x) !important;
-}
-
-.my-base {
-  margin-top: var(--base-m-y) !important;
-  margin-bottom: var(--base-m-y) !important;
-}
-
-.mt-base {
-  margin-top: var(--base-m-y) !important;
-}
-
-.mr-base {
-  margin-right: var(--base-m-x) !important;
-}
-
-.mb-base {
-  margin-bottom: var(--base-m-y) !important;
-}
-
-.ml-base {
-  margin-left: var(--base-m-x) !important;
-}
-
-.px-base {
-  padding-right: var(--base-p-x) !important;
-  padding-left: var(--base-p-x) !important;
-}
-
-.py-base {
-  padding-top: var(--base-p-y) !important;
-  padding-bottom: var(--base-p-y) !important;
-}
-
-.pt-base {
-  padding-top: var(--base-p-y) !important;
-}
-
-.pr-base {
-  padding-right: var(--base-m-x) !important;
-}
-
-.pb-base {
-  padding-bottom: var(--base-p-y) !important;
-}
-
-.pl-base {
-  padding-left: var(--base-m-x) !important;
-}
-
-@mixin spacing($mq-breakpoint) {
-  .p-#{$mq-breakpoint}-0 {
-    padding: 0 !important;
-  }
-
-  .m-#{$mq-breakpoint}-0 {
-    margin: 0 !important;
-  }
-
-  .pt-#{$mq-breakpoint}-0 {
-    padding-top: 0 !important;
-  }
-
-  .pr-#{$mq-breakpoint}-0 {
-    padding-right: 0 !important;
-  }
-
-  .pb-#{$mq-breakpoint}-0 {
-    padding-bottom: 0 !important;
-  }
-
-  .pl-#{$mq-breakpoint}-0 {
-    padding-left: 0 !important;
-  }
-
-  .mt-#{$mq-breakpoint}-0 {
-    margin-top: 0 !important;
-  }
-
-  .mr-#{$mq-breakpoint}-0 {
-    margin-right: 0 !important;
-  }
-
-  .mb-#{$mq-breakpoint}-0 {
-    margin-bottom: 0 !important;
-  }
-
-  .ml-#{$mq-breakpoint}-0 {
-    margin-left: 0 !important;
-  }
-
-  .px-#{$mq-breakpoint}-0 {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-  }
-
-  .py-#{$mq-breakpoint}-0 {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  .mx-#{$mq-breakpoint}-0 {
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-  }
-
-  .my-#{$mq-breakpoint}-0 {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
-
-  .mx-#{$mq-breakpoint}-auto {
-    margin-right: auto !important;
-    margin-left: auto !important;
-  }
-
-  .ml-#{$mq-breakpoint}-auto {
-    margin-left: auto !important;
-  }
-
-  .mr-#{$mq-breakpoint}-auto {
-    margin-right: auto !important;
-  }
-
-  .mx-#{$mq-breakpoint}-base {
-    margin-right: var(--base-m-x) !important;
-    margin-left: var(--base-m-x) !important;
-  }
-
-  .my-#{$mq-breakpoint}-base {
-    margin-top: var(--base-m-y) !important;
-    margin-bottom: var(--base-m-y) !important;
-  }
-
-  .mt-#{$mq-breakpoint}-base {
-    margin-top: var(--base-m-y) !important;
-  }
-
-  .mb-#{$mq-breakpoint}-base {
-    margin-bottom: var(--base-m-y) !important;
-  }
-
-  .ml-#{$mq-breakpoint}-base {
-    margin-left: var(--base-m-x) !important;
-  }
-
-  .mr-#{$mq-breakpoint}-base {
-    margin-right: var(--base-m-x) !important;
-  }
-
-  .px-#{$mq-breakpoint}-base {
-    padding-right: var(--base-p-x) !important;
-    padding-left: var(--base-p-x) !important;
-  }
-
-  .py-#{$mq-breakpoint}-base {
-    padding-top: var(--base-p-y) !important;
-    padding-bottom: var(--base-p-y) !important;
-  }
-
-  .pt-#{$mq-breakpoint}-base {
-    padding-top: var(--base-p-y) !important;
-  }
-
-  .pb-#{$mq-breakpoint}-base {
-    padding-bottom: var(--base-p-y) !important;
-  }
-
-  .pl-#{$mq-breakpoint}-base {
-    padding-left: var(--base-m-x) !important;
-  }
-
-  .pr-#{$mq-breakpoint}-base {
-    padding-right: var(--base-m-x) !important;
+    @each $unit, $rem in $margin-spacers-y {
+      @if $breakpoint {
+        .#{$prefix}y-#{$breakpoint}-#{$unit} {
+          #{$prop}-top: #{$rem} !important;
+          #{$prop}-bottom: #{$rem} !important;
+        }
+      } @else {
+        .#{$prefix}y-#{$unit} {
+          #{$prop}-top: #{$rem} !important;
+          #{$prop}-bottom: #{$rem} !important;
+        }
+      }
+    }
   }
 }
+
+// Margin X
+@mixin m-spacer-x($breakpoint: null) {
+  $margin-spacer-x: var(--base-m-x);
+
+  $margin-spacers-x: (
+    base: $margin-spacer-x,
+    auto: auto,
+    0: 0,
+    1: $margin-spacer-x,
+    2: (
+      calc(#{$margin-spacer-x} * 2)
+    ),
+    3: (
+      calc(#{$margin-spacer-x} * 3)
+    ),
+    4: (
+      calc(#{$margin-spacer-x} * 4)
+    ),
+    5: (
+      calc(#{$margin-spacer-x} * 5)
+    )
+  );
+
+  $margin-directions-x: (
+    left: l,
+    right: r
+  );
+
+  $prefix: m;
+
+  @each $prop, $letter in (margin: $prefix) {
+    @each $direction, $d in $margin-directions-x {
+      @each $unit, $rem in $margin-spacers-x {
+        @if $breakpoint {
+          .#{$letter}#{$d}-#{$breakpoint}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        } @else {
+          .#{$letter}#{$d}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        }
+      }
+    }
+
+    @each $unit, $rem in $margin-spacers-x {
+      @if $breakpoint {
+        .#{$prefix}x-#{$breakpoint}-#{$unit} {
+          #{$prop}-left: #{$rem} !important;
+          #{$prop}-right: #{$rem} !important;
+        }
+      } @else {
+        .#{$prefix}x-#{$unit} {
+          #{$prop}-left: #{$rem} !important;
+          #{$prop}-right: #{$rem} !important;
+        }
+      }
+    }
+  }
+}
+
+// Padding Y
+@mixin p-spacer-y($breakpoint: null) {
+  $padding-spacer-y: var(--base-p-y);
+
+  $padding-spacers-y: (
+    base: $padding-spacer-y,
+    auto: auto,
+    0: 0,
+    1: $padding-spacer-y,
+    2: (
+      calc(#{$padding-spacer-y} * 2)
+    ),
+    3: (
+      calc(#{$padding-spacer-y} * 3)
+    ),
+    4: (
+      calc(#{$padding-spacer-y} * 4)
+    ),
+    5: (
+      calc(#{$padding-spacer-y} * 5)
+    )
+  );
+
+  $padding-directions-y: (
+    top: t,
+    bottom: b
+  );
+
+  $prefix: p;
+
+  @each $prop, $letter in (padding: $prefix) {
+    @each $direction, $d in $padding-directions-y {
+      @each $unit, $rem in $padding-spacers-y {
+        @if $breakpoint {
+          .#{$letter}#{$d}-#{$breakpoint}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        } @else {
+          .#{$letter}#{$d}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        }
+      }
+    }
+
+    @each $unit, $rem in $padding-spacers-y {
+      @if $breakpoint {
+        .#{$prefix}y-#{$breakpoint}-#{$unit} {
+          #{$prop}-top: #{$rem} !important;
+          #{$prop}-bottom: #{$rem} !important;
+        }
+      } @else {
+        .#{$prefix}y-#{$unit} {
+          #{$prop}-top: #{$rem} !important;
+          #{$prop}-bottom: #{$rem} !important;
+        }
+      }
+    }
+  }
+}
+
+// Padding X
+@mixin p-spacer-x($breakpoint: null) {
+  $padding-spacer-x: var(--base-p-x);
+
+  $padding-spacers-x: (
+    base: $padding-spacer-x,
+    auto: auto,
+    0: 0,
+    1: $padding-spacer-x,
+    2: (
+      calc(#{$padding-spacer-x} * 2)
+    ),
+    3: (
+      calc(#{$padding-spacer-x} * 3)
+    ),
+    4: (
+      calc(#{$padding-spacer-x} * 4)
+    ),
+    5: (
+      calc(#{$padding-spacer-x} * 5)
+    )
+  );
+
+  $padding-directions-x: (
+    left: l,
+    right: r
+  );
+
+  $prefix: p;
+
+  @each $prop, $letter in (padding: $prefix) {
+    @each $direction, $d in $padding-directions-x {
+      @each $unit, $rem in $padding-spacers-x {
+        @if $breakpoint {
+          .#{$letter}#{$d}-#{$breakpoint}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        } @else {
+          .#{$letter}#{$d}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        }
+      }
+    }
+
+    @each $unit, $rem in $padding-spacers-x {
+      @if $breakpoint {
+        .#{$prefix}x-#{$breakpoint}-#{$unit} {
+          #{$prop}-left: #{$rem} !important;
+          #{$prop}-right: #{$rem} !important;
+        }
+      } @else {
+        .#{$prefix}x-#{$unit} {
+          #{$prop}-left: #{$rem} !important;
+          #{$prop}-right: #{$rem} !important;
+        }
+      }
+    }
+  }
+}
+
+@include m-spacer-y();
+@include m-spacer-x();
+@include p-spacer-y();
+@include p-spacer-x();
 
 @include mq($until: mobile) {
-  @include spacing(sm);
+  @include m-spacer-y(sm);
+  @include m-spacer-x(sm);
+  @include p-spacer-y(sm);
+  @include p-spacer-x(sm);
 }
 
 @include mq($from: tablet) {
-  @include spacing(md);
+  @include m-spacer-y(md);
+  @include m-spacer-x(md);
+  @include p-spacer-y(md);
+  @include p-spacer-x(md);
 }
 
 @include mq($from: desktop) {
-  @include spacing(lg);
+  @include m-spacer-y(lg);
+  @include m-spacer-x(lg);
+  @include p-spacer-y(lg);
+  @include p-spacer-x(lg);
 }
 
 @include mq($from: wide) {
-  @include spacing(xl);
+  @include m-spacer-y(xl);
+  @include m-spacer-x(xl);
+  @include p-spacer-y(xl);
+  @include p-spacer-x(xl);
 }

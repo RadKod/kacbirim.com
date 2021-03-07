@@ -14,15 +14,6 @@ module.exports = {
   plugins: ['prettier'],
   rules: {
     'prettier/prettier': ['error'],
-    'max-len': [
-      'error',
-      {
-        code: 150,
-        ignoreComments: true,
-        ignoreStrings: true,
-        ignoreTemplateLiterals: true
-      }
-    ],
     'no-multiple-empty-lines': [2, { max: 2 }],
     semi: ['error', 'never'],
     'arrow-parens': ['error', 'as-needed'],

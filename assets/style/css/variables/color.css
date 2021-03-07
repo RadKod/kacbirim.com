@@ -45,6 +45,16 @@
   /* Overlays */
   --color-overlay-01: rgba(0, 0, 0, 0.1);
   --color-overlay-02: rgba(255, 255, 255, 0.7);
+
+  /* Social */
+  --color-twitter-01: #00acee;
+  --color-github-00: #24292e;
+  --color-github-01: #24292e;
+  --color-github-02: #fff;
+  --color-linkedin-01: #0e76a8;
+  --color-discord-01: #7289da;
+  --color-discord-02: #2c2f33;
+  --color-stackoverflow-01: #f48026;
 }
 
 .dark-mode {
@@ -86,4 +96,14 @@
   /* Overlays */
   --color-overlay-01: rgba(0, 0, 0, 0.6);
   --color-overlay-02: rgba(0, 0, 0, 0.6);
+
+  /* Social */
+  --color-twitter-01: #00acee;
+  --color-github-00: #24292e;
+  --color-github-01: #24292e;
+  --color-github-02: #fff;
+  --color-linkedin-01: #0e76a8;
+  --color-discord-01: #7289da;
+  --color-discord-02: #2c2f33;
+  --color-stackoverflow-01: #f48026;
 }

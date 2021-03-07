@@ -46,9 +46,10 @@
     "cross-env": "^5.2.0",
     "express": "^4.17.1",
     "material-icons": "^0.5.3",
-    "nuxt": "^2.14.12",
+    "nuxt": "^2.15.2",
     "vue-auto-text": "^1.0.4",
     "vue-resize-text": "^0.1.1",
+    "vue-sticky-directive": "^0.0.10",
     "vuesax": "3.12.2"
   },
   "devDependencies": {
