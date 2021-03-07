@@ -1,10 +1,19 @@
 <template lang="pug">
 .main-feed-post-list
-  post-card(v-for="i in 4")
+  template(v-for="post in posts")
+    post-card(:post="post")
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    posts: {
+      type: Array,
+      required: false,
+      default: null
+    }
+  }
+}
 </script>
 
 <style lang="scss">

@@ -4,23 +4,51 @@ vs-card.post-card
     app-logo.post-card__avatar.mr-base(:width="32" :height="32")
     strong.post-card__userFirstName Kaç Birim?
   .post-card__media(slot="media")
-    img.post-card__image(src="@/assets/img/elements/kacbirim_com_template.fw.png" draggable="false")
+    img.post-card__image(:src="post.image" draggable="false" :alt="post.description || 'kacbirim.com'")
   .post-card__info
-    p.post-card__description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    .post-card__tags
-      nuxt-link.post-card__tag(to="/" title="tag") #80000
-      nuxt-link.post-card__tag(to="/" title="tag") #araba
+    p.post-card__description(v-if="post.description") {{ post.description }}
+    template(v-if="post.tags && post.tags.length > 0")
+      .post-card__tags
+        template(v-for="tag in post.tags")
+          nuxt-link.post-card__tag(:to="`/etiket/${tag.slug}`" :title="tag.name") {{ `#${tag.name}` }}
     vs-divider
     time.post-card__time
       vs-icon(color="var(--color-text-03)" icon="access_time" size="16px")
-      | Karşılaştırma Tarihi: 12.04.2021
+      | Karşılaştırma Tarihi: {{ post.comparison_date }}
   .post-card__footer(slot="footer")
     vs-row.post-card__actions(vs-justify="flex-end")
-      vs-button.post-card__actionButton(type="gradient" color="dark" icon="link") Bağlantısını Kopyala
+      vs-button.post-card__actionButton(
+        type="gradient"
+        color="dark"
+        icon="link"
+        v-clipboard:copy="`${domain}/${post.slug}`"
+        v-clipboard:success="showSuccessMessageCopyPostLink"
+        v-clipboard:error="showErrorMessageCopyPostLink"
+      ) Bağlantısını Kopyala
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    post: {
+      type: Object,
+      required: true
+    }
+  },
+  data() {
+    return {
+      domain: process.env.DOMAIN
+    }
+  },
+  methods: {
+    showSuccessMessageCopyPostLink() {
+      this.$izitoast.success({ title: 'Kalıcı bağlantı başarıyla kopyalandı.' })
+    },
+    showErrorMessageCopyPostLink() {
+      this.$izitoast.error({ title: 'Bağlantı kopyalama başarısız oldu.' })
+    }
+  }
+}
 </script>
 
 <style lang="scss">

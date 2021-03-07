@@ -1,5 +1,6 @@
 .layout {
   position: relative;
+  min-height: 100vh;
 
   &__columnsWrapper {
     position: relative;
@@ -9,5 +10,6 @@
 
   &__routerViewWrapper {
     position: relative;
+    min-height: 100vh;
   }
 }

@@ -1,4 +1,9 @@
 export default {
+  env: {
+    DOMAIN: 'https://kacbirim.com',
+    API: 'https://api.radkod.com/kacbirim/api/v1'
+  },
+
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
@@ -63,7 +68,13 @@ export default {
     {
       src: '@/plugins/vue-sticky-directive.js', // https://www.npmjs.com/package/vue-sticky-directive
       ssr: false
-    }
+    },
+    {
+      src: '@/plugins/vue-clipboard2.js', // https://www.npmjs.com/package/vue-clipboard2
+      ssr: false
+    },
+    { src: '~/plugins/app/app-axios.js' },
+    { src: '~/plugins/app/api-register.js' }
   ],
 
   /*
@@ -105,7 +116,30 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    ['@nuxtjs/axios'], // https://axios.nuxtjs.org
+    // Doc: https://www.npmjs.com/package/nuxt-izitoast
+    [
+      'nuxt-izitoast',
+      {
+        class: 'kb-toast kb-toast-default',
+        close: true,
+        color: '#222',
+        pauseOnHover: true,
+        layout: 2,
+        closeOnEscape: true,
+        theme: 'dark',
+        timeout: 4000,
+        progressBar: true,
+        transitionIn: 'fadeInUp',
+        transitionOut: 'fadeOut',
+        transitionInMobile: 'fadeInUp',
+        transitionOutMobile: 'fadeOutDown',
+        position: 'bottomCenter',
+        progressBarColor: '#666'
+      }
+    ]
+  ],
 
   /*
    ** Build configuration
