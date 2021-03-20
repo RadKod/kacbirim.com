@@ -23,7 +23,7 @@ export default {
       slug: this.$route.params.slug
     })
 
-    if (result.status === 'success') {
+    if (result.success) {
       this.post.detail = result.data
     } else {
       this.$izitoast.error({ title: result.message })

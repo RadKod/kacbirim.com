@@ -1,10 +1,9 @@
 <template lang="pug">
-.page.page--main
+.page.page--tag
   template(v-if="$fetchState.pending")
     preloader-spinner
   template(v-else-if="$fetchState.error")
-    p Bir hata oluştu <br>
-      small {{ $fetchState.error.message }}
+    p Bir hata oluştu...
   template(v-else)
     main-feed-post-list(:posts="post.items")
 </template>
@@ -21,7 +20,9 @@ export default {
   },
   async fetch() {
     const result = await this.$axios.apis.post.fetchPosts({
-      requestQuery: null
+      requestQuery: {
+        tags_like: `slug,${this.$route.params.slug}`
+      }
     })
 
     this.post.items = result.data

@@ -1,8 +1,14 @@
 export const postApi = appAxios => ({
-  fetchPosts() {
+  fetchPosts({ requestQuery }) {
+    const defaults = { sort: 'id,desc' }
+
     return appAxios({
       method: 'get',
-      path: `posts`
+      path: `posts`,
+      query: {
+        ...defaults,
+        ...requestQuery
+      }
     })
   },
   fetchPost({ slug }) {

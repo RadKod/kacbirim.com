@@ -10,7 +10,8 @@ vs-card.widget.github-widget
       vs-button(
         type="gradient"
         color="var(--color-github-01)"
-        icon="link"
+        icon="ri-github-fill"
+        icon-pack="ri"
         gradient-color-secondary="var(--color-github-01)"
         title="RadKod GitHub Profili"
         :href="{ url: 'https://github.com/RadKod' }"

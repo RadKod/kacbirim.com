@@ -10,7 +10,8 @@ vs-card.widget.discord-widget
       vs-button(
         type="gradient"
         color="var(--color-discord-01)"
-        icon="link"
+        icon="ri-discord-fill"
+        icon-pack="ri"
         gradient-color-secondary="var(--color-discord-02)"
         title="RadKod Discord Sunucusu"
         :href="{ url: 'https://discord.gg/GeNbfbJkfM' }"

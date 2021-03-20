@@ -1,9 +1,10 @@
 <template lang="pug">
 .app-header
-  .container
+  .app-header__inner.container
     nuxt-link.app-header__brand(to="/" title="kacbirim.com")
       app-logo.app-header__brandLogo(:width="40" :height="40")
-      strong.app-header__brandTitle kacbirim.com
+      strong.app-header__brandTitle Kaç Birim?
+    app-nav
 </template>
 
 <script>
@@ -21,6 +22,12 @@ export default {}
   width: 100%;
   height: var(--header-height);
   background-color: var(--color-ui-02);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   &__brand {
     display: flex;

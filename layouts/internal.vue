@@ -1,13 +1,14 @@
 <template lang="pug">
-.layout.layout--default-layout
+.layout.layout--internal-layout
   // APP Preloader
   app-preloader
   // Header
   app-header
-  .layout__columnsWrapper
-    // Router View
-    main.layout__routerViewWrapper
-      nuxt
+  .container
+    .layout__columnsWrapper
+      // Router View
+      main.layout__routerViewWrapper
+        nuxt
   // Footer
   app-footer
 </template>
@@ -20,7 +21,7 @@ export default {}
 .layout {
   $bcn: &;
 
-  &--default-layout {
+  &--internal-layout {
     position: relative;
   }
 }

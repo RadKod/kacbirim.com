@@ -14,7 +14,7 @@ vs-card.post-card
     vs-divider
     time.post-card__time
       vs-icon(color="var(--color-text-03)" icon="access_time" size="16px")
-      | Karşılaştırma Tarihi: {{ post.comparison_date }}
+      | Karşılaştırma Tarihi: {{ $moment(post.comparison_date).format('DD.MM.YYYY') }}
   .post-card__footer(slot="footer")
     vs-row.post-card__actions(vs-justify="flex-end")
       vs-button.post-card__actionButton(

@@ -1,30 +1,24 @@
 <template lang="pug">
-.page.page--main
+.page.page--internal
   template(v-if="$fetchState.pending")
     preloader-spinner
   template(v-else-if="$fetchState.error")
-    p Bir hata oluştu <br>
-      small {{ $fetchState.error.message }}
+    p Bir hata oluştu...
   template(v-else)
-    main-feed-post-list(:posts="post.items")
+    nuxt-content(:document="page")
 </template>
 
 <script>
 export default {
-  layout: 'main',
+  layout: 'internal',
   data() {
     return {
-      post: {
-        items: []
-      }
+      page: {}
     }
   },
   async fetch() {
-    const result = await this.$axios.apis.post.fetchPosts({
-      requestQuery: null
-    })
-
-    this.post.items = result.data
+    const page = await this.$content(`sayfa/${this.$route.params.slug}`).fetch()
+    this.page = page
   }
 }
 </script>

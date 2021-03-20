@@ -4,7 +4,7 @@ vs-card.widget.filter-widget
     span.widget__title Filtreler
   template(slot="media")
     img.widget__banner.filter-widget__banner(src="@/assets/img/elements/thinking.png" alt="Çalışmada" draggable="false")
-  p.widget__description.my-base Burayı senin için hazırlıyoruz. Yakında içerikleri kolayca filtreleyebilmek için bu özelliği sunacağız..
+  p.widget__description.my-base İçerik sayımız henüz çok az, daha fazlası için çalışıyoruz. İçerik sayımız arttığında kolayca filtreleyebilmek için bu özelliği sunacağız..
 </template>
 
 <script>

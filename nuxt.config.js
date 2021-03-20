@@ -1,6 +1,6 @@
 export default {
   env: {
-    DOMAIN: 'https://kacbirim.com',
+    DOMAIN: 'localhost:3000',
     API: 'https://api.radkod.com/kacbirim/api/v1'
   },
 
@@ -54,7 +54,9 @@ export default {
    */
   css: [
     // Actual styles entry point (as import management)
-    '~/assets/style/scss/app.scss'
+    '~/assets/style/scss/app.scss',
+    // 3rd
+    'remixicon/fonts/remixicon.css'
   ],
 
   /*
@@ -90,7 +92,8 @@ export default {
     '~/components/logo',
     '~/components/post-list',
     '~/components/spinner',
-    '~/components/widget'
+    '~/components/widget',
+    '~/components/nav'
   ],
 
   /*
@@ -110,7 +113,9 @@ export default {
         // stylelint module options
         files: ['{assets/style,components,layouts,pages}/**/*.{css,sass,scss,less,stylus,vue}']
       }
-    ]
+    ],
+    // https://www.npmjs.com/package/@nuxtjs/moment
+    ['@nuxtjs/moment', { defaultLocale: 'tr', locales: ['tr'] }]
   ],
 
   /*
@@ -118,6 +123,7 @@ export default {
    */
   modules: [
     ['@nuxtjs/axios'], // https://axios.nuxtjs.org
+    ['@nuxt/content'], // https://content.nuxtjs.org
     // Doc: https://www.npmjs.com/package/nuxt-izitoast
     [
       'nuxt-izitoast',
