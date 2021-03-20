@@ -1,7 +1,7 @@
 <template lang="pug">
-nav.app-nav
+nav.app-tabbar
   template(v-for="nav in items")
-    nuxt-link.app-nav__link(:to="nav.link" :title="nav.title")
+    nuxt-link.app-tabbar__link(:to="nav.link" :title="nav.title")
       template(v-if="$route.path === nav.link")
         vs-icon(:icon="nav.activeIcon" size="28px" icon-pack="ri")
       template(v-else)
@@ -30,6 +30,12 @@ export default {
           link: '/ulkeler',
           icon: 'ri-global-line',
           activeIcon: 'ri-global-fill'
+        },
+        {
+          title: 'Keşfet',
+          link: '/kesfet',
+          icon: 'ri-compass-line',
+          activeIcon: 'ri-compass-fill'
         }
       ]
     }
@@ -38,14 +44,27 @@ export default {
 </script>
 
 <style lang="scss">
-.app-nav {
+.app-tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-index-tabbar);
   display: flex;
+  width: 100%;
+  height: var(--tabbar-height);
+  background-color: var(--color-ui-02);
+  box-shadow: var(--box-shadow-1);
 
   &__link {
     display: flex;
+    flex: 1;
     align-items: center;
-    margin-left: calc(var(--base-m-x) * 2);
+    justify-content: center;
     color: var(--color-icon-01);
+
+    &:active {
+      background-color: var(--color-active-01);
+    }
   }
 }
 </style>

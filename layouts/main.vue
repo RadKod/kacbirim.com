@@ -6,17 +6,19 @@
   app-header
   .container
     .layout__columnsWrapper
-      vs-row
-        vs-col(vs-lg="8")
+      .row
+        .col-12.col-lg-8.pr-lg-0
           // Router View
           main.layout__routerViewWrapper
             nuxt
-        vs-col.layout__sidebar(vs-lg="4" sticky-container)
+        .col-4.layout__sidebar.d-none.d-lg-block(sticky-container)
           filter-widget
           github-widget
           .sticky(v-sticky sticky-offset="{top: 80}")
             discord-widget
             footer-widget
+  // App Tabbar
+  app-tabbar.d-lg-none
 </template>
 
 <script>
@@ -32,7 +34,9 @@ export default {}
 
     #{$bcn} {
       &__routerViewWrapper {
-        margin-right: 2rem;
+        @include mq($from: desktop) {
+          margin-right: var(--base-m-x);
+        }
       }
 
       &__sidebar {

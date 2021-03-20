@@ -93,7 +93,8 @@ export default {
     '~/components/post-list',
     '~/components/spinner',
     '~/components/widget',
-    '~/components/nav'
+    '~/components/nav',
+    '~/components/tabbar'
   ],
 
   /*

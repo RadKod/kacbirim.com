@@ -6,6 +6,7 @@
 @import '../css/variables/border-radius.css';
 @import '../css/variables/header.css';
 @import '../css/variables/footer.css';
+@import '../css/variables/tabbar.css';
 
 // Vendor
 @import '../css/vendor/animate.min.css';
@@ -19,7 +20,7 @@
 @import 'utils/display';
 @import 'utils/flex';
 @import 'utils/spacing';
-@import 'utils/gridimsi';
+@import 'utils/grid';
 
 // Shared (elements with common/shared style classes)
 @import 'shared/page';

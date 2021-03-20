@@ -10,6 +10,8 @@
         // Router View
         main.layout__routerViewWrapper
           nuxt
+  // App Tabbar
+  app-tabbar.d-lg-none
 </template>
 
 <script>

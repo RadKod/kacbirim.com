@@ -8,8 +8,10 @@
     // Router View
     main.layout__routerViewWrapper
       nuxt
+  // App Tabbar
+  app-tabbar.d-lg-none
   // Footer
-  app-footer
+  app-footer.d-none.d-lg-flex
 </template>
 
 <script>

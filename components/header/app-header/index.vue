@@ -4,7 +4,7 @@
     nuxt-link.app-header__brand(to="/" title="kacbirim.com")
       app-logo.app-header__brandLogo(:width="40" :height="40")
       strong.app-header__brandTitle Kaç Birim?
-    app-nav
+    app-nav.d-none.d-lg-flex
 </template>
 
 <script>
