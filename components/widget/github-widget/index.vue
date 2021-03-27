@@ -4,7 +4,7 @@ vs-card.widget.github-widget
     span.widget__title GitHub'da Biz
   template(slot="media")
     img.widget__banner.discord-widget__banner.mb-base(src="@/assets/img/elements/github_1.png" alt="Community" draggable="false")
-  p.widget__description RadKod startup ekibi olarak çözüm ürettiğimiz projeleri daima <strong>RadKod</strong> GitHub profilinde yayınlarız. Bu proje dahil açık kaynak bir çok projeye profilimizden erişebilirsin.
+  p.widget__description RadKod startup ekibi olarak çözüm ürettiğimiz projeleri daima GitHub profilimizde yayınlarız. Bu proje dahil açık kaynak bir çok projeye profilimizden erişebilirsin.
   template(slot="footer")
     vs-row(vs-justify="flex-end" vs-align="center")
       vs-button(

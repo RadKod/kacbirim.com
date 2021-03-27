@@ -6,7 +6,7 @@ vs-card.widget.sponsor-widget
     .sponsor-widget__banner
       img.sponsor-widget__bannerBg(src="@/assets/img/elements/sponsors-hero-bg-1600.jpg" alt="RadKod Sponsorluk" draggable="false")
       img.sponsor-widget__bannerOctocat(src="@/assets/img/elements/sponsors-mona.svg" alt="RadKod Sponsorluk" draggable="false")
-  p.widget__description Açık kaynak ve kamu yararına olan diğer bir çok projenin sürekliliği için <strong>RadKod</strong> Ekibine bağış yapabilirsin.
+  p.widget__description Açık kaynak ve kamu yararına olan diğer bir çok projenin sürekliliği için bize bağış yapabilirsin.
   template(slot="footer")
     vs-row(vs-justify="flex-end" vs-align="center")
       nuxt-link(to="/sponsorluk")
