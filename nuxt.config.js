@@ -97,7 +97,8 @@ export default {
     '~/components/tabbar',
     '~/components/state-block',
     '~/components/cover',
-    '~/components/list'
+    '~/components/list',
+    '~/components/skeleton'
   ],
 
   /*

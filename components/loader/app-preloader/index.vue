@@ -1,6 +1,7 @@
 <template lang="pug">
 .app-preloader(v-if="preloader.isLoading" ref="appPreloader")
-  preloader-spinner
+  app-logo.mr-1(:width="40" :height="40")
+  p Yükleniyor ..
 </template>
 
 <script>

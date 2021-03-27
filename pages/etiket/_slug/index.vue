@@ -1,11 +1,16 @@
 <template lang="pug">
 .page.page--tag
   template(v-if="$fetchState.pending")
-    preloader-spinner
+    template(v-for="i in 2")
+      client-only
+        post-card-skeleton
   template(v-else-if="$fetchState.error")
     p Bir hata oluştu...
   template(v-else)
-    main-feed-post-list(:posts="post.items")
+    template(v-if="post.items.length > 0")
+      main-feed-post-list(:posts="post.items")
+    template(v-else)
+      p Henüz veri yok..
 </template>
 
 <script>

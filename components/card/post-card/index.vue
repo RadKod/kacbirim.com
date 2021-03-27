@@ -1,10 +1,15 @@
 <template lang="pug">
 vs-card.post-card
+  // Header
   .post-card__header(slot="header")
     app-logo.post-card__avatar.mr-base(:width="32" :height="32")
     strong.post-card__userFirstName Kaç Birim?
+
+  // Media
   .post-card__media(slot="media")
-    img.post-card__image(:src="post.image" draggable="false" :alt="post.description || 'kacbirim.com'")
+    img.post-card__image(:src="post.image" draggable="false" loading="lazy" :alt="post.description || 'kacbirim.com'")
+
+  // Info
   .post-card__info
     p.post-card__description(v-if="post.description") {{ post.description }}
     template(v-for="country in post.products_countries")
@@ -12,6 +17,9 @@ vs-card.post-card
         span.d-block {{ country.name }} Asgari Ücret:
           strong &nbsp; {{ country.wage }} {{ country.currency }}
         span(v-html="calculatePurchasingPower({ productName: country.product_name, purchasingPower: country.purchasing_power })")
+    small Değerler sistem tarafından otomatik hesaplanmıştır.
+
+    // Tags
     template(v-if="post.tags && post.tags.length > 0")
       .post-card__tags
         template(v-for="tag in post.tags")
@@ -20,6 +28,8 @@ vs-card.post-card
     time.post-card__time
       vs-icon(color="var(--color-text-03)" icon="access_time" size="16px")
       | Karşılaştırma Tarihi: {{ $moment(post.comparison_date).format('DD.MM.YYYY') }}
+
+  // Footer
   .post-card__footer(slot="footer")
     vs-row.post-card__actions(vs-justify="flex-end")
       vs-button.post-card__actionButton(
