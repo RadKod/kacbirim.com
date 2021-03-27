@@ -94,7 +94,9 @@ export default {
     '~/components/spinner',
     '~/components/widget',
     '~/components/nav',
-    '~/components/tabbar'
+    '~/components/tabbar',
+    '~/components/state-block',
+    '~/components/cover'
   ],
 
   /*

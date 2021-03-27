@@ -24,14 +24,13 @@ export default {}
 </script>
 
 <style lang="scss">
-.discord-widget {
+.github-widget {
   position: relative;
 
   &__banner {
     position: relative;
     width: 100%;
     height: auto;
-    filter: saturate(0.3);
   }
 }
 </style>

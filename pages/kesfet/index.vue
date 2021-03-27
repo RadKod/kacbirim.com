@@ -3,6 +3,7 @@
   footer-widget
   github-widget
   discord-widget
+  sponsor-widget
 </template>
 
 <script>

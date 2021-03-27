@@ -6,6 +6,9 @@
     position: relative;
     min-height: 100vh;
     padding: calc(var(--header-height) + var(--base-p-y) * 2) 0;
+    @include mq($until: tablet) {
+      padding: calc(var(--header-height) + var(--base-p-y)) 0;
+    }
   }
 
   &__routerViewWrapper {

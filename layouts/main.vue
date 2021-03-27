@@ -12,10 +12,10 @@
           main.layout__routerViewWrapper
             nuxt
         .col-4.layout__sidebar.d-none.d-lg-block(sticky-container)
-          filter-widget
           github-widget
+          discord-widget
           .sticky(v-sticky sticky-offset="{top: 80}")
-            discord-widget
+            sponsor-widget
             footer-widget
   // App Tabbar
   app-tabbar.d-lg-none

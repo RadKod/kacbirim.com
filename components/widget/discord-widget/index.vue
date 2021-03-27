@@ -31,7 +31,6 @@ export default {}
     position: relative;
     width: 100%;
     height: auto;
-    filter: saturate(0.3);
   }
 }
 </style>
