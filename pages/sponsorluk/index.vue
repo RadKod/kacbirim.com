@@ -6,7 +6,7 @@
     br
     p Kaç Birim? - kacbirim.com projesi şu anda kar amacı gütmeyen bir projedir. Açık kaynak ve kamu yararına olan diğer bir çok projenin sürekliliği için <strong>RadKod</strong> Ekibine bağış yapabilirsin.
     br
-    p Türkiye'de ne yazık ki Paypal veya Stripe gibi platformlar desteklenmiyor. Bu nedenle bağışları kripto para ödemeleri ile kabul ediyoruz. Alt tarafta yer alan butona tıklayarak ödeme işlemini başlatabilirsin. Kripto para ödemelerinde global bir platform olan Coinbase aracılığını kullanıyoruz, ek olarak bağışçının bilgilerini elde etmek her ne kadar zor olsa da bunları tespit ettiğimiz takdirde senin bilgilerine bu sayfada oluşturacağımız sponsor listesinde yer vereceğiz.
+    p Türkiye'de ne yazık ki Paypal veya Stripe gibi platformlar desteklenmiyor. Bu nedenle bağışları kripto para ödemeleri ile kabul ediyoruz. Alt tarafta yer alan butonlardan her hangi birine tıklayarak ödeme işlemini başlatabilirsin. Kripto para ödemelerinde global bir platform olan Coinbase aracılığını kullanıyoruz, ek olarak bağışçının bilgilerini elde etmek her ne kadar zor olsa da bunları tespit ettiğimiz takdirde senin bilgilerine bu sayfada oluşturacağımız sponsor listesinde yer vereceğiz.
     br
     donate-crypto-card-list.my-2
 </template>

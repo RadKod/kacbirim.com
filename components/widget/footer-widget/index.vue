@@ -27,8 +27,8 @@ export default {
           link: '/sayfa/iletisim'
         },
         {
-          title: 'Bülten Aboneliği',
-          link: '/bulten-aboneligi'
+          title: 'Sponsorluk',
+          link: '/sponsorluk'
         }
       ]
     }
