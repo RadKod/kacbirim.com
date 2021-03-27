@@ -7,6 +7,11 @@ vs-card.post-card
     img.post-card__image(:src="post.image" draggable="false" :alt="post.description || 'kacbirim.com'")
   .post-card__info
     p.post-card__description(v-if="post.description") {{ post.description }}
+    template(v-for="country in post.products_countries")
+      .post-card__country
+        span.d-block {{ country.name }} Asgari Ücret:
+          strong &nbsp; {{ country.wage }} {{ country.currency }}
+        span(v-html="calculatePurchasingPower({ productName: country.product_name, purchasingPower: country.purchasing_power })")
     template(v-if="post.tags && post.tags.length > 0")
       .post-card__tags
         template(v-for="tag in post.tags")
@@ -41,6 +46,23 @@ export default {
     }
   },
   methods: {
+    calculatePurchasingPower({ productName, purchasingPower }) {
+      let text = ''
+
+      if (purchasingPower.month_in) {
+        text = `1 ay içinde ${purchasingPower.month_in} adet ${productName} alınabilir.`
+      } else {
+        if (purchasingPower.year) {
+          text = `${purchasingPower.year} ${purchasingPower.month ? `yıl&nbsp;` : `yıl'da ${productName} alınabilir.`}`
+        }
+
+        if (purchasingPower.month) {
+          text += `${purchasingPower.month} ay'da ${productName} alınabilir.`
+        }
+      }
+
+      return text
+    },
     showSuccessMessageCopyPostLink() {
       this.$izitoast.success({ title: 'Kalıcı bağlantı başarıyla kopyalandı.' })
     },
@@ -74,19 +96,32 @@ export default {
   }
 
   &__description {
+    margin-bottom: var(--base-m-y);
     color: var(--color-text-03);
     font-size: 14px;
+  }
+
+  &__country {
+    margin-bottom: var(--base-m-y);
+    padding-left: 1rem;
+    color: var(--color-text-02);
+    font-size: 12px;
+    border-left: 3px solid var(--color-border-01);
   }
 
   &__tags {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 1rem;
+    margin-top: calc(var(--base-m-y) * 2);
     word-wrap: break-word;
   }
 
   &__tag {
     margin-right: 0.4rem;
+
+    &:hover {
+      text-decoration: underline !important;
+    }
   }
 
   &__time {
