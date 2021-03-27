@@ -25,9 +25,9 @@
         span Yükleniyor..
       span(v-else) KRİPTO PARA İLE BAĞIŞ YAPMAK İÇİN TIKLA
     .donate-crypto
-      a.donate-with-crypto(ref="donateWithCrypto" href="https://commerce.coinbase.com/checkout/5cf1feef-3a96-40ee-a7a4-3963af9af9fc")
+      a.donate-with-crypto(ref="donateWithCrypto" href="https://commerce.coinbase.com/checkout/9cde6a2c-b479-4d90-bec4-36979be786fb")
       script(src="https://commerce.coinbase.com/v1/checkout.js?version=201807" defer).
-      a.donate-crypto__alternativeLink(href="https://commerce.coinbase.com/checkout/5cf1feef-3a96-40ee-a7a4-3963af9af9fc" target="_blank") Eğer yukardaki buton çalışmıyorsa bu bağlantıyı kullanabilirsin.
+      a.donate-crypto__alternativeLink(href="https://commerce.coinbase.com/checkout/9cde6a2c-b479-4d90-bec4-36979be786fb" target="_blank") Eğer yukardaki buton çalışmıyorsa bu bağlantıyı kullanabilirsin.
 </template>
 
 <script>
