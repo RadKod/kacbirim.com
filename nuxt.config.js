@@ -170,7 +170,9 @@ module.exports = {
       }
     ],
     // https://www.npmjs.com/package/@nuxtjs/moment
-    ['@nuxtjs/moment', { defaultLocale: 'tr', locales: ['tr'] }]
+    ['@nuxtjs/moment', { defaultLocale: 'tr', locales: ['tr'] }],
+    // https://google-analytics.nuxtjs.org
+    '@nuxtjs/google-analytics'
   ],
 
   /*
@@ -201,6 +203,11 @@ module.exports = {
       }
     ]
   ],
+
+  // GA
+  googleAnalytics: {
+    id: 'G-JNNZYQKFF3'
+  },
 
   /*
    ** Build configuration
