@@ -6,9 +6,14 @@
   app-header
   .container
     .layout__columnsWrapper
-      // Router View
-      main.layout__routerViewWrapper
-        nuxt
+      .row
+        .col-12.col-lg-8
+          // Router View
+          main.layout__routerViewWrapper
+            nuxt
+        .col-4.layout__sidebar.d-none.d-lg-block(sticky-container)
+          .sticky(v-sticky sticky-offset="{top: 80}")
+            site-nav-widget
   // App Tabbar
   app-tabbar.d-lg-none
   // Footer
