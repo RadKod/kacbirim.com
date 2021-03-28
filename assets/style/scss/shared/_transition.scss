@@ -1,19 +1,25 @@
 // Nuxt - Page Route Transition
 .page-enter-active,
 .page-leave-active {
-  transition: 0.2s cubic-bezier(0.82, 0.01, 0.77, 0.78);
+  transition: 0.1s cubic-bezier(0.82, 0.01, 0.77, 0.78);
 }
 
 .page-enter,
 .page-leave-active {
-  transform: scale(0.99);
+  transform: scale(1);
   transform-origin: center center;
   opacity: 0;
 }
 
 // Nuxt - Layout Route Transition
+.layout-enter-active,
 .layout-leave-active {
-  transform: scale(0.99);
+  transition: 0.1s cubic-bezier(0.82, 0.01, 0.77, 0.78);
+}
+
+.layout-enter,
+.layout-leave-active {
+  transform: scale(1);
   transform-origin: center center;
   opacity: 0;
 }
