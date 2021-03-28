@@ -7,7 +7,13 @@ vs-card.post-card
 
   // Media
   .post-card__media(slot="media")
-    img.post-card__image(:src="post.image" draggable="false" loading="lazy" :alt="post.description || 'kacbirim.com'")
+    v-lazy-image.post-card__image.aspect-ratio(
+      :src="post.image"
+      draggable="false"
+      style="--ar: 1/1"
+      :src-placeholder="require('@/assets/img/elements/preloader.gif')"
+      :alt="post.description || 'kacbirim.com'"
+    )
 
   // Info
   .post-card__info
@@ -43,7 +49,12 @@ vs-card.post-card
 </template>
 
 <script>
+import VLazyImage from 'v-lazy-image'
+
 export default {
+  components: {
+    VLazyImage
+  },
   props: {
     post: {
       type: Object,

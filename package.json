@@ -52,6 +52,7 @@
     "nuxt": "^2.15.2",
     "nuxt-izitoast": "^1.0.0",
     "remixicon": "^2.5.0",
+    "v-lazy-image": "^1.4.0",
     "vue-auto-text": "^1.0.4",
     "vue-clipboard2": "^0.3.1",
     "vue-content-loader": "0.2",
