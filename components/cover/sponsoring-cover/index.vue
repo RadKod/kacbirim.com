@@ -31,7 +31,7 @@ export default {}
     right: 0;
     bottom: 0;
     width: 300px;
-    animation: flyingOctocat 4s linear both infinite;
+    animation: flyingOctocatInCover 4s linear both infinite;
     @include mq($until: tablet) {
       width: 150px;
     }
@@ -42,7 +42,7 @@ export default {}
     @include center(true, true);
   }
 
-  @keyframes flyingOctocat {
+  @keyframes flyingOctocatInCover {
     0% {
       transform: translateY(0);
     }
