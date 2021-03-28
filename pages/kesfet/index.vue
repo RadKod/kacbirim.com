@@ -1,9 +1,10 @@
 <template lang="pug">
 .page.page--discover
-  footer-widget
+  site-nav-widget
   github-widget
   discord-widget
   sponsor-widget
+  footer-widget
 </template>
 
 <script>
@@ -17,7 +18,7 @@ export default {
   position: relative;
 
   .widget {
-    margin-bottom: calc(var(--base-m-y) * 4);
+    margin-bottom: calc(var(--base-m-y) * 2);
   }
 }
 </style>
