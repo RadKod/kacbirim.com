@@ -42,7 +42,7 @@ vs-card.post-card
         type="gradient"
         color="dark"
         icon="link"
-        v-clipboard:copy="`${domain}/${post.slug}`"
+        v-clipboard:copy="`https://${domain}/${post.slug}`"
         v-clipboard:success="showSuccessMessageCopyPostLink"
         v-clipboard:error="showErrorMessageCopyPostLink"
       ) Bağlantısını Kopyala
