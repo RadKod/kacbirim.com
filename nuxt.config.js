@@ -206,7 +206,7 @@ module.exports = {
 
   // GA
   googleAnalytics: {
-    id: 'G-JNNZYQKFF3'
+    id: 'UA-72581578-4'
   },
 
   /*
