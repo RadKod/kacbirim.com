@@ -1,13 +1,12 @@
 {
   "name": "kacbirim.com",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Uluslarası birim fiyat karşılaştırması.",
   "private": false,
   "keywords": [
     "kacbirim",
     "kacbirimcom",
-    "nuxt",
-    "atomic-design"
+    "nuxt"
   ],
   "author": "selimdoyranli",
   "contributors": [
