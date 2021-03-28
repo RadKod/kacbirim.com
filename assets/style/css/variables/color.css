@@ -28,6 +28,7 @@
   --color-link-01: #3f5894;
   --color-link-02: #3897f0;
   --color-icon-01: #171717;
+  --color-icon-02: #eee;
 
   /* Interactive */
   --color-hover-01: #fafafa;
@@ -48,14 +49,17 @@
   --color-overlay-02: rgba(255, 255, 255, 0.7);
 
   /* Social */
-  --color-twitter-01: #00acee;
-  --color-github-00: #24292e;
   --color-github-01: #24292e;
   --color-github-02: #fff;
   --color-linkedin-01: #0e76a8;
   --color-discord-01: #7289da;
   --color-discord-02: #2c2f33;
   --color-stackoverflow-01: #f48026;
+  --color-copyUrl-01: #0070ca;
+  --color-twitter-01: #00acee;
+  --color-facebook-01: #4267b2;
+  --color-whatsapp-01: #00d757;
+  --color-telegram-01: #08c;
 }
 
 .dark-mode {
@@ -80,6 +84,7 @@
   --color-link-01: #007194;
   --color-link-02: #4aa2f5;
   --color-icon-01: #777;
+  --color-icon-02: #666;
 
   /* Interactive */
   --color-hover-01: #303031;
@@ -99,12 +104,15 @@
   --color-overlay-02: rgba(0, 0, 0, 0.6);
 
   /* Social */
-  --color-twitter-01: #00acee;
-  --color-github-00: #24292e;
   --color-github-01: #24292e;
   --color-github-02: #fff;
   --color-linkedin-01: #0e76a8;
   --color-discord-01: #7289da;
   --color-discord-02: #2c2f33;
   --color-stackoverflow-01: #f48026;
+  --color-copyUrl-01: #0070ca;
+  --color-twitter-01: #00acee;
+  --color-facebook-01: #4267b2;
+  --color-whatsapp-01: #00d757;
+  --color-telegram-01: #08c;
 }

@@ -123,8 +123,9 @@ module.exports = {
       src: '@/plugins/vue-clipboard2.js', // https://www.npmjs.com/package/vue-clipboard2
       ssr: false
     },
-    { src: '~/plugins/app/app-axios.js' },
-    { src: '~/plugins/app/api-register.js' }
+    { src: '@/plugins/v-dropdown-menu.js' }, // https://github.com/RadKod/v-dropdown-menu
+    { src: '@/plugins/app/app-axios.js' },
+    { src: '@/plugins/app/api-register.js' }
   ],
 
   /*
@@ -146,7 +147,8 @@ module.exports = {
     '~/components/state-block',
     '~/components/cover',
     '~/components/list',
-    '~/components/skeleton'
+    '~/components/skeleton',
+    '~/components/dropdown'
   ],
 
   /*
