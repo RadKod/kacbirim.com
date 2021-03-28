@@ -35,17 +35,9 @@ vs-card.post-card
       vs-icon(color="var(--color-text-03)" icon="access_time" size="16px")
       | Karşılaştırma Tarihi: {{ $moment(post.comparison_date).format('DD.MM.YYYY') }}
 
-  // Footer
-  .post-card__footer(slot="footer")
-    vs-row.post-card__actions(vs-justify="flex-end")
-      vs-button.post-card__actionButton(
-        type="gradient"
-        color="dark"
-        icon="link"
-        v-clipboard:copy="`https://${domain}/${post.slug}`"
-        v-clipboard:success="showSuccessMessageCopyPostLink"
-        v-clipboard:error="showErrorMessageCopyPostLink"
-      ) Bağlantısını Kopyala
+  // Actions
+  vs-row.post-card__actions(vs-justify="flex-end")
+    post-social-share-dropdown(:url="`https://${domain}/${post.slug}`" :title="post.title" :tags="tags")
 </template>
 
 <script>
@@ -66,6 +58,17 @@ export default {
       domain: process.env.DOMAIN
     }
   },
+  computed: {
+    tags() {
+      let tags = []
+
+      this.post.tags.forEach(tag => {
+        tags.push(tag.slug)
+      })
+
+      return tags
+    }
+  },
   methods: {
     calculatePurchasingPower({ productName, purchasingPower }) {
       let text = ''
@@ -83,12 +86,6 @@ export default {
       }
 
       return text
-    },
-    showSuccessMessageCopyPostLink() {
-      this.$izitoast.success({ title: 'Kalıcı bağlantı başarıyla kopyalandı.' })
-    },
-    showErrorMessageCopyPostLink() {
-      this.$izitoast.error({ title: 'Bağlantı kopyalama başarısız oldu.' })
     }
   }
 }
@@ -155,6 +152,12 @@ export default {
     i {
       margin-right: 0.4rem;
     }
+  }
+
+  &__actions {
+    position: absolute;
+    right: 1rem;
+    bottom: -1.4rem;
   }
 }
 </style>
