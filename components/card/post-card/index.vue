@@ -22,7 +22,9 @@ vs-card.post-card
       .post-card__country
         span.d-block {{ country.name }} Asgari Ücret:
           strong &nbsp; {{ country.wage }} {{ country.currency }}
-        span(v-html="calculatePurchasingPower({ productName: country.product_name, purchasingPower: country.purchasing_power })")
+        span(
+          v-html="calculatePurchasingPower({ productName: country.product_name, productType: country.product_type, purchasingPower: country.purchasing_power })"
+        )
     small Değerler sistem tarafından otomatik hesaplanmıştır.
 
     // Tags
@@ -70,11 +72,11 @@ export default {
     }
   },
   methods: {
-    calculatePurchasingPower({ productName, purchasingPower }) {
+    calculatePurchasingPower({ productName, productType, purchasingPower }) {
       let text = ''
 
       if (purchasingPower.month_in) {
-        text = `1 ay içinde ${purchasingPower.month_in} adet ${productName} alınabilir.`
+        text = `1 ay içinde ${purchasingPower.month_in} ${productType} ${productName} alınabilir.`
       } else {
         if (purchasingPower.year) {
           text = `${purchasingPower.year} ${purchasingPower.month ? `yıl&nbsp;` : `yıl'da ${productName} alınabilir.`}`
