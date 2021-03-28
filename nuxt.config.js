@@ -213,8 +213,7 @@ module.exports = {
    ** See https://nuxtjs.org/api/configuration-server/
    */
   server: {
-    host: '0.0.0.0', // default: localhost,
-    timing: false,
-    port: 80
+    host: '0.0.0.0', // default: localhost
+    port: 8080
   }
 }
