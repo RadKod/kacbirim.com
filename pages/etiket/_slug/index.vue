@@ -8,12 +8,15 @@
     p Bir hata oluştu...
   template(v-else)
     template(v-if="post.items.length > 0")
+      p.mb-2 <strong>{{ $route.params.slug }}</strong> etiketine ait içerikleri görüntülüyorsun.
       main-feed-post-list(:posts="post.items")
     template(v-else)
       p Henüz veri yok..
 </template>
 
 <script>
+import { TITLE, DESCRIPTION } from '@/system/constants'
+
 export default {
   layout: 'main',
   data() {
@@ -31,6 +34,11 @@ export default {
     })
 
     this.post.items = result.data
+  },
+  head() {
+    return {
+      title: `${this.$route.params.slug} etiketine ait içerikler. ${TITLE} - ${DESCRIPTION}` || `${TITLE} - ${DESCRIPTION}`
+    }
   }
 }
 </script>

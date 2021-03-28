@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { TITLE, DESCRIPTION } from '@/system/constants'
+
 export default {
   layout: 'post-detail',
   data() {
@@ -27,6 +29,28 @@ export default {
       this.post.detail = result.data
     } else {
       this.$izitoast.error({ title: result.message })
+    }
+  },
+  head() {
+    return {
+      title: `${this.post.detail.title} - ${TITLE} - ${DESCRIPTION}` || `${TITLE} - ${DESCRIPTION}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.post.detail.title} - ${this.post.detail.description}` || `${TITLE} - ${DESCRIPTION}`
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `${this.post.detail.image}` || `/preview/social-media-preview.jpg`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `${this.post.detail.title} - ${this.post.detail.description}` || `${TITLE} - ${DESCRIPTION}`
+        }
+      ]
     }
   }
 }

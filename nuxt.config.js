@@ -1,3 +1,5 @@
+import { TITLE, DESCRIPTION, DOMAIN } from './system/constants.js'
+
 export default {
   env: {
     DOMAIN: 'localhost:3000',
@@ -15,7 +17,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: `${TITLE} - ${DESCRIPTION}`,
     meta: [
       { charset: 'utf-8' },
       {
@@ -25,10 +27,56 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: `${TITLE} - ${DESCRIPTION}`
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: '/preview/social-media-preview.jpg'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: `${TITLE} - ${DESCRIPTION}`
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: `${DOMAIN}`
+      },
+      {
+        hid: 'twitter:card',
+        property: 'twitter:card',
+        content: `summary_large_image`
+      },
+      {
+        hid: 'twitter:creator',
+        property: 'twitter:creator',
+        content: `@kacbirim`
+      },
+      {
+        hid: 'Publisher',
+        property: 'Publisher',
+        content: `RadKod`
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/icon/favicon.ico' },
+      { rel: 'apple-touch-icon', sizes: '57x57', href: '/icon/apple-icon-57x57.png' },
+      { rel: 'apple-touch-icon', sizes: '60x60', href: '/icon/apple-icon-60x60.png' },
+      { rel: 'apple-touch-icon', sizes: '72x72', href: '/icon/apple-icon-72x72.png' },
+      { rel: 'apple-touch-icon', sizes: '76x76', href: '/icon/apple-icon-76x76.png' },
+      { rel: 'apple-touch-icon', sizes: '114x114', href: '/icon/apple-icon-114x114.png' },
+      { rel: 'apple-touch-icon', sizes: '120x120', href: '/icon/apple-icon-120x120.png' },
+      { rel: 'apple-touch-icon', sizes: '144x144', href: '/icon/apple-icon-144x144.png' },
+      { rel: 'apple-touch-icon', sizes: '152x152', href: '/icon/apple-icon-152x152.png' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/icon/apple-icon-180x180.png' },
+      { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/icon/android-icon-192x192.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icon/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/icon/favicon-96x96.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icon/favicon-16x16.png' },
+      { rel: 'manifest', href: '/manifest.json' }
+    ]
   },
 
   /*

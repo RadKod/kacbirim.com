@@ -14,11 +14,13 @@
 </template>
 
 <script>
+import { TITLE, DESCRIPTION } from '@/system/constants'
+
 export default {
   layout: 'full',
   head() {
     return {
-      title: 'Sponsorluk - Kaç Birim?'
+      title: `Sponsorluk - ${TITLE} - ${DESCRIPTION}`
     }
   }
 }
