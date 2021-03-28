@@ -1,0 +1,276 @@
+// Margin Y
+@mixin m-spacer-y($breakpoint: null) {
+  $margin-spacer-y: var(--base-m-y);
+
+  $margin-spacers-y: (
+    base: $margin-spacer-y,
+    auto: auto,
+    0: 0,
+    1: $margin-spacer-y,
+    2: (
+      calc(#{$margin-spacer-y} * 2)
+    ),
+    3: (
+      calc(#{$margin-spacer-y} * 3)
+    ),
+    4: (
+      calc(#{$margin-spacer-y} * 4)
+    ),
+    5: (
+      calc(#{$margin-spacer-y} * 5)
+    )
+  );
+
+  $margin-directions-y: (
+    top: t,
+    bottom: b
+  );
+
+  $prefix: m;
+
+  @each $prop, $letter in (margin: $prefix) {
+    @each $direction, $d in $margin-directions-y {
+      @each $unit, $rem in $margin-spacers-y {
+        @if $breakpoint {
+          .#{$letter}#{$d}-#{$breakpoint}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        } @else {
+          .#{$letter}#{$d}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        }
+      }
+    }
+
+    @each $unit, $rem in $margin-spacers-y {
+      @if $breakpoint {
+        .#{$prefix}y-#{$breakpoint}-#{$unit} {
+          #{$prop}-top: #{$rem} !important;
+          #{$prop}-bottom: #{$rem} !important;
+        }
+      } @else {
+        .#{$prefix}y-#{$unit} {
+          #{$prop}-top: #{$rem} !important;
+          #{$prop}-bottom: #{$rem} !important;
+        }
+      }
+    }
+  }
+}
+
+// Margin X
+@mixin m-spacer-x($breakpoint: null) {
+  $margin-spacer-x: var(--base-m-x);
+
+  $margin-spacers-x: (
+    base: $margin-spacer-x,
+    auto: auto,
+    0: 0,
+    1: $margin-spacer-x,
+    2: (
+      calc(#{$margin-spacer-x} * 2)
+    ),
+    3: (
+      calc(#{$margin-spacer-x} * 3)
+    ),
+    4: (
+      calc(#{$margin-spacer-x} * 4)
+    ),
+    5: (
+      calc(#{$margin-spacer-x} * 5)
+    )
+  );
+
+  $margin-directions-x: (
+    left: l,
+    right: r
+  );
+
+  $prefix: m;
+
+  @each $prop, $letter in (margin: $prefix) {
+    @each $direction, $d in $margin-directions-x {
+      @each $unit, $rem in $margin-spacers-x {
+        @if $breakpoint {
+          .#{$letter}#{$d}-#{$breakpoint}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        } @else {
+          .#{$letter}#{$d}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        }
+      }
+    }
+
+    @each $unit, $rem in $margin-spacers-x {
+      @if $breakpoint {
+        .#{$prefix}x-#{$breakpoint}-#{$unit} {
+          #{$prop}-left: #{$rem} !important;
+          #{$prop}-right: #{$rem} !important;
+        }
+      } @else {
+        .#{$prefix}x-#{$unit} {
+          #{$prop}-left: #{$rem} !important;
+          #{$prop}-right: #{$rem} !important;
+        }
+      }
+    }
+  }
+}
+
+// Padding Y
+@mixin p-spacer-y($breakpoint: null) {
+  $padding-spacer-y: var(--base-p-y);
+
+  $padding-spacers-y: (
+    base: $padding-spacer-y,
+    auto: auto,
+    0: 0,
+    1: $padding-spacer-y,
+    2: (
+      calc(#{$padding-spacer-y} * 2)
+    ),
+    3: (
+      calc(#{$padding-spacer-y} * 3)
+    ),
+    4: (
+      calc(#{$padding-spacer-y} * 4)
+    ),
+    5: (
+      calc(#{$padding-spacer-y} * 5)
+    )
+  );
+
+  $padding-directions-y: (
+    top: t,
+    bottom: b
+  );
+
+  $prefix: p;
+
+  @each $prop, $letter in (padding: $prefix) {
+    @each $direction, $d in $padding-directions-y {
+      @each $unit, $rem in $padding-spacers-y {
+        @if $breakpoint {
+          .#{$letter}#{$d}-#{$breakpoint}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        } @else {
+          .#{$letter}#{$d}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        }
+      }
+    }
+
+    @each $unit, $rem in $padding-spacers-y {
+      @if $breakpoint {
+        .#{$prefix}y-#{$breakpoint}-#{$unit} {
+          #{$prop}-top: #{$rem} !important;
+          #{$prop}-bottom: #{$rem} !important;
+        }
+      } @else {
+        .#{$prefix}y-#{$unit} {
+          #{$prop}-top: #{$rem} !important;
+          #{$prop}-bottom: #{$rem} !important;
+        }
+      }
+    }
+  }
+}
+
+// Padding X
+@mixin p-spacer-x($breakpoint: null) {
+  $padding-spacer-x: var(--base-p-x);
+
+  $padding-spacers-x: (
+    base: $padding-spacer-x,
+    auto: auto,
+    0: 0,
+    1: $padding-spacer-x,
+    2: (
+      calc(#{$padding-spacer-x} * 2)
+    ),
+    3: (
+      calc(#{$padding-spacer-x} * 3)
+    ),
+    4: (
+      calc(#{$padding-spacer-x} * 4)
+    ),
+    5: (
+      calc(#{$padding-spacer-x} * 5)
+    )
+  );
+
+  $padding-directions-x: (
+    left: l,
+    right: r
+  );
+
+  $prefix: p;
+
+  @each $prop, $letter in (padding: $prefix) {
+    @each $direction, $d in $padding-directions-x {
+      @each $unit, $rem in $padding-spacers-x {
+        @if $breakpoint {
+          .#{$letter}#{$d}-#{$breakpoint}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        } @else {
+          .#{$letter}#{$d}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        }
+      }
+    }
+
+    @each $unit, $rem in $padding-spacers-x {
+      @if $breakpoint {
+        .#{$prefix}x-#{$breakpoint}-#{$unit} {
+          #{$prop}-left: #{$rem} !important;
+          #{$prop}-right: #{$rem} !important;
+        }
+      } @else {
+        .#{$prefix}x-#{$unit} {
+          #{$prop}-left: #{$rem} !important;
+          #{$prop}-right: #{$rem} !important;
+        }
+      }
+    }
+  }
+}
+
+@include m-spacer-y();
+@include m-spacer-x();
+@include p-spacer-y();
+@include p-spacer-x();
+
+@include mq($until: mobile) {
+  @include m-spacer-y(sm);
+  @include m-spacer-x(sm);
+  @include p-spacer-y(sm);
+  @include p-spacer-x(sm);
+}
+
+@include mq($from: tablet) {
+  @include m-spacer-y(md);
+  @include m-spacer-x(md);
+  @include p-spacer-y(md);
+  @include p-spacer-x(md);
+}
+
+@include mq($from: desktop) {
+  @include m-spacer-y(lg);
+  @include m-spacer-x(lg);
+  @include p-spacer-y(lg);
+  @include p-spacer-x(lg);
+}
+
+@include mq($from: wide) {
+  @include m-spacer-y(xl);
+  @include m-spacer-x(xl);
+  @include p-spacer-y(xl);
+  @include p-spacer-x(xl);
+}

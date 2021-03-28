@@ -1,0 +1,14 @@
+@mixin poppins-light {
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+}
+
+@mixin poppins-regular {
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+}
+
+@mixin poppins-bold {
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}

@@ -1,0 +1,72 @@
+$column: 12;
+$container-width: 925px;
+$gap: 8px;
+
+@mixin column-default {
+  @for $i from 1 through $column {
+    .col-#{$i} {
+      width: calc((100% / #{$column}) * #{$i});
+    }
+
+    .offset-#{$i} {
+      margin-left: calc((100% / #{$column}) * #{$i});
+    }
+  }
+}
+
+@mixin column($size) {
+  @for $i from 1 through $column {
+    .col-#{$size}-#{$i} {
+      width: calc((100% / #{$column}) * #{$i});
+    }
+
+    .offset-#{$size}-#{$i} {
+      margin-left: calc((100% / #{$column}) * #{$i});
+    }
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $gap;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$gap;
+  margin-left: -$gap;
+}
+
+[class^='col-'],
+[class*=' col-'] {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  padding: 0 $gap;
+}
+
+@include column-default;
+
+@include mq($until: mobile) {
+  @include column(xs);
+}
+
+@include mq($from: mobile) {
+  @include column(sm);
+}
+
+@include mq($from: tablet) {
+  @include column(md);
+}
+
+@include mq($from: desktop) {
+  @include column(lg);
+}
+
+@include mq($from: wide) {
+  @include column(xl);
+}
