@@ -1,6 +1,5 @@
 <template lang="pug">
 .page.page--discover
-  site-nav-widget
   github-widget
   discord-widget
   sponsor-widget

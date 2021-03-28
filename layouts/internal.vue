@@ -7,6 +7,8 @@
   .container
     .layout__columnsWrapper
       .row
+        .col-12.d-lg-none
+          site-nav-widget.site-nav-widget--mobile
         .col-12.col-lg-8
           // Router View
           main.layout__routerViewWrapper
@@ -30,6 +32,21 @@ export default {}
 
   &--internal-layout {
     position: relative;
+
+    .site-nav-widget {
+      $this: &;
+
+      &--mobile {
+        .block-nav {
+          flex-direction: row;
+
+          &__link {
+            flex: 1;
+            justify-content: center;
+          }
+        }
+      }
+    }
   }
 }
 </style>
