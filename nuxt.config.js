@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   env: {
     DOMAIN: 'kacbirim.com',
     API: 'https://api.radkod.com/kacbirim/api/v1',
