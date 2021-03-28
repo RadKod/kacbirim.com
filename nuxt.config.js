@@ -1,9 +1,9 @@
-import { TITLE, DESCRIPTION, DOMAIN } from './system/constants.js'
-
 export default {
   env: {
-    DOMAIN: 'localhost:3000',
-    API: 'https://api.radkod.com/kacbirim/api/v1'
+    DOMAIN: 'kacbirim.com',
+    API: 'https://api.radkod.com/kacbirim/api/v1',
+    TITLE: 'Kaç Birim?',
+    DESCRIPTION: 'Uluslararası birim fiyat karşılaştırması.'
   },
 
   /*
@@ -17,7 +17,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: `${TITLE} - ${DESCRIPTION}`,
+    title: `Kaç Birim? - Uluslararası birim fiyat karşılaştırması.`,
     meta: [
       { charset: 'utf-8' },
       {
@@ -27,7 +27,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: `${TITLE} - ${DESCRIPTION}`
+        content: `Kaç Birim? - Uluslararası birim fiyat karşılaştırması.`
       },
       {
         hid: 'og:image',
@@ -37,12 +37,12 @@ export default {
       {
         hid: 'og:description',
         property: 'og:description',
-        content: `${TITLE} - ${DESCRIPTION}`
+        content: `Kaç Birim? - Uluslararası birim fiyat karşılaştırması.`
       },
       {
         hid: 'og:url',
         property: 'og:url',
-        content: `${DOMAIN}`
+        content: `kacbirim.com`
       },
       {
         hid: 'twitter:card',
