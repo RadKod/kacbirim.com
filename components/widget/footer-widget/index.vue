@@ -3,6 +3,10 @@ footer.widget.footer-widget
   p.footer-widget__description
     | kacbirim.com - Uluslararası birim fiyat karşılaştırması.
     <br>
+  .footer-widget-social-media-list
+    template(v-for="media in socialMediaItems")
+      a.footer-widget-social-media-list__item(:href="media.link" :title="media.title" target="_blank")
+        vs-icon(:icon="media.icon" size="24px" icon-pack="ri")
   nav.footer-widget__nav
     template(v-for="nav in navItems")
       nuxt-link.footer-widget__navLink(:to="nav.link" :title="nav.title") {{ nav.title }}
@@ -17,6 +21,23 @@ footer.widget.footer-widget
 export default {
   data() {
     return {
+      socialMediaItems: [
+        {
+          title: 'Instagram',
+          icon: 'ri-instagram-line',
+          link: 'https://instagram.com/kac.birim'
+        },
+        {
+          title: 'Facebook',
+          icon: 'ri-facebook-line',
+          link: 'https://facebook.com/kacbirim'
+        },
+        {
+          title: 'Twitter',
+          icon: 'ri-twitter-line',
+          link: 'https://twitter.com/kacbirim'
+        }
+      ],
       navItems: [
         {
           title: 'Hakkında',
@@ -41,9 +62,24 @@ export default {
   position: relative;
 
   &__description {
-    margin-bottom: var(--base-m-y);
     color: var(--color-text-03);
     font-size: 12px;
+  }
+
+  &-social-media-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: calc(var(--base-p-y) * 1) 0;
+
+    &__item {
+      display: flex;
+      margin-right: calc(var(--base-m-x) / 1.4);
+      color: var(--color-text-07);
+
+      &:hover {
+        color: var(--color-text-03);
+      }
+    }
   }
 
   &__nav {

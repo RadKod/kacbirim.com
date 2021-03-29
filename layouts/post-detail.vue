@@ -1,15 +1,16 @@
 <template lang="pug">
-.layout.layout--main-layout
+.layout.layout--post-detail-layout
   // APP Preloader
   app-preloader
   // Header
   app-header
   .container
     .layout__columnsWrapper
-      vs-row
-        // Router View
-        main.layout__routerViewWrapper
-          nuxt
+      .row.d-flex.justify-content-center
+        .col-md-8
+          // Router View
+          main.layout__routerViewWrapper
+            nuxt
   // App Tabbar
   app-tabbar.d-lg-none
 </template>
