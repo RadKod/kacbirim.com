@@ -17,7 +17,7 @@ vs-card.post-card
 
   // Info
   .post-card__info
-    p.post-card__description(v-if="post.description") {{ post.description }}
+    p.post-card__description(v-if="post.description" v-html="description")
     template(v-for="country in post.products_countries")
       .post-card__country
         span.d-block {{ country.name }} Asgari Ücret:
@@ -61,6 +61,15 @@ export default {
     }
   },
   computed: {
+    description() {
+      let description
+
+      if (this.post.description) {
+        description = this.post.description.replace('\n', '<br>')
+      }
+
+      return description
+    },
     tags() {
       let tags = []
 
