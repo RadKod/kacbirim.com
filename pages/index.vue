@@ -8,11 +8,11 @@
     p Bir hata oluştu <br>
       small {{ fetchState.error.message }}
   template(v-else)
-    main-feed-post-list(:posts="post.items")
+    main-feed-post-list(:posts="posts")
     // Infinite Loading
     client-only
       template(v-if="windowScrollY > 800")
-        infinite-loading(v-if="post.items.length >= post.limit" @infinite="loadMore")
+        infinite-loading(v-if="posts.length >= post.limit" @infinite="loadMore")
           template(v-slot:spinner)
             post-card-skeleton
           template(v-slot:no-more)
@@ -21,7 +21,7 @@
 
 <script>
 import { useWindowScroll } from '@vueuse/core'
-import { defineComponent, useFetch, reactive, useContext } from '@nuxtjs/composition-api'
+import { defineComponent, useFetch, ref, reactive, useContext } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   layout: 'main',
@@ -32,9 +32,10 @@ export default defineComponent({
 
     const post = reactive({
       page: 1,
-      limit: 10,
-      items: []
+      limit: 10
     })
+
+    const posts = ref([])
 
     const { fetch, fetchState } = useFetch(async () => {
       const result = await context.$axios.apis.post.fetchPosts({
@@ -43,7 +44,7 @@ export default defineComponent({
           limit: post.limit
         }
       })
-      post.items = result.data
+      posts.value = result.data
     })
 
     async function loadMore($state) {
@@ -53,7 +54,7 @@ export default defineComponent({
           limit: post.limit
         }
       })
-      post.items.push(...result.data)
+      posts.value.push(...result.data)
       $state.loaded()
 
       if (result && result.data.length <= 0) {
@@ -61,7 +62,7 @@ export default defineComponent({
       }
     }
 
-    return { windowScrollX: x, windowScrollY: y, post, fetchState, loadMore }
+    return { windowScrollX: x, windowScrollY: y, post, posts, fetchState, loadMore }
   }
 })
 </script>

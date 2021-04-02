@@ -9,11 +9,11 @@
       small {{ fetchState.error.message }}
   template(v-else)
     p.mb-2 <strong>{{ $route.params.slug }}</strong> etiketine ait içerikleri görüntülüyorsun.
-    main-feed-post-list(:posts="post.items")
+    main-feed-post-list(:posts="posts")
     // Infinite Loading
     client-only
       template(v-if="windowScrollY > 800")
-        infinite-loading(v-if="post.items.length >= post.limit" @infinite="loadMore")
+        infinite-loading(v-if="posts.length >= post.limit" @infinite="loadMore")
           template(v-slot:spinner)
             post-card-skeleton
           template(v-slot:no-more)
@@ -23,7 +23,7 @@
 <script>
 import { TITLE, DESCRIPTION } from '@/system/constants'
 import { useWindowScroll } from '@vueuse/core'
-import { defineComponent, useFetch, reactive, useContext, useRoute, useMeta } from '@nuxtjs/composition-api'
+import { defineComponent, useFetch, reactive, ref, useContext, useRoute, useMeta } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   layout: 'main',
@@ -35,9 +35,10 @@ export default defineComponent({
 
     const post = reactive({
       page: 1,
-      limit: 10,
-      items: []
+      limit: 10
     })
+
+    const posts = ref([])
 
     const { fetch, fetchState } = useFetch(async () => {
       const result = await context.$axios.apis.post.fetchPosts({
@@ -47,17 +48,18 @@ export default defineComponent({
           tags_like: `slug,${route.value.params.slug}`
         }
       })
-      post.items = result.data
+      posts.value = result.data
     })
 
     async function loadMore($state) {
       const result = await context.$axios.apis.post.fetchPosts({
         requestQuery: {
           page: (post.page += 1),
-          limit: post.limit
+          limit: post.limit,
+          tags_like: `slug,${route.value.params.slug}`
         }
       })
-      post.items.push(...result.data)
+      posts.value.push(...result.data)
       $state.loaded()
 
       if (result && result.data.length <= 0) {
@@ -67,7 +69,7 @@ export default defineComponent({
 
     useMeta({ title: `${route.value.params.slug} etiketine ait içerikler. ${TITLE} - ${DESCRIPTION}` || `${TITLE} - ${DESCRIPTION}` })
 
-    return { windowScrollX: x, windowScrollY: y, post, fetchState, loadMore }
+    return { windowScrollX: x, windowScrollY: y, post, posts, fetchState, loadMore }
   },
   head: {}
 })
