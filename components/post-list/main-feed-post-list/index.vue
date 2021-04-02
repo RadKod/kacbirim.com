@@ -1,7 +1,10 @@
 <template lang="pug">
 .main-feed-post-list
-  template(v-for="post in posts")
-    post-card(:post="post")
+  template(v-if="posts.length > 0")
+    template(v-for="post in posts")
+      post-card(:post="post")
+  template(v-else)
+    p Henüz post yok..
 </template>
 
 <script>

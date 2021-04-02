@@ -123,6 +123,7 @@ module.exports = {
       src: '@/plugins/vue-clipboard2.js', // https://www.npmjs.com/package/vue-clipboard2
       ssr: false
     },
+    { src: '@/plugins/vue-infinite-loading.js', ssr: false }, // Doc: https://peachscript.github.io/vue-infinite-loading/guide
     { src: '@/plugins/v-dropdown-menu.js' }, // https://github.com/RadKod/v-dropdown-menu
     { src: '@/plugins/app/app-axios.js' },
     { src: '@/plugins/app/api-register.js' }
@@ -155,6 +156,7 @@ module.exports = {
    ** Nuxt.js dev-modules
    */
   buildModules: [
+    '@nuxtjs/composition-api',
     '@nuxtjs/style-resources',
     [
       '@nuxtjs/eslint-module',
