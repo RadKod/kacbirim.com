@@ -44,8 +44,10 @@
   "dependencies": {
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/axios": "^5.13.1",
+    "@nuxtjs/composition-api": "^0.22.4",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/moment": "^1.6.1",
+    "@vueuse/core": "^4.6.3",
     "cross-env": "^5.2.0",
     "express": "^4.17.1",
     "material-icons": "^0.5.3",
@@ -57,6 +59,7 @@
     "vue-auto-text": "^1.0.4",
     "vue-clipboard2": "^0.3.1",
     "vue-content-loader": "0.2",
+    "vue-infinite-loading": "^2.4.5",
     "vue-resize-text": "^0.1.1",
     "vue-sticky-directive": "^0.0.10",
     "vuesax": "3.12.2"
