@@ -11,7 +11,7 @@
     main-feed-post-list(:posts="posts")
     // Infinite Loading
     client-only
-      template(v-if="windowScrollY > 800")
+      template(v-if="windowScrollY.value > 800")
         infinite-loading(v-if="posts.length >= post.limit" @infinite="loadMore")
           template(v-slot:spinner)
             post-card-skeleton
@@ -21,14 +21,20 @@
 
 <script>
 import { useWindowScroll } from '@vueuse/core'
-import { defineComponent, useFetch, ref, reactive, useContext } from '@nuxtjs/composition-api'
+import { defineComponent, useFetch, ref, reactive, useContext, onMounted } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   layout: 'main',
   setup() {
     const context = useContext()
+    let windowScrollX = ref(0)
+    let windowScrollY = ref(0)
 
-    const { x, y } = useWindowScroll()
+    onMounted(() => {
+      const { x, y } = useWindowScroll()
+      windowScrollX.value = x
+      windowScrollY.value = y
+    })
 
     const post = reactive({
       page: 1,
@@ -62,7 +68,7 @@ export default defineComponent({
       }
     }
 
-    return { windowScrollX: x, windowScrollY: y, post, posts, fetchState, loadMore }
+    return { windowScrollX, windowScrollY, post, posts, fetchState, loadMore }
   }
 })
 </script>
