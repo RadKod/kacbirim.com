@@ -42,6 +42,7 @@
     ]
   },
   "dependencies": {
+    "@evillt/vue-cusdis": "^1.0.1",
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/composition-api": "^0.22.4",

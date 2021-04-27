@@ -32,10 +32,16 @@ vs-card.post-card
       .post-card__tags
         template(v-for="tag in post.tags")
           nuxt-link.post-card__tag(:to="`/etiket/${tag.slug}`" :title="tag.name") {{ `#${tag.name}` }}
-    vs-divider
     time.post-card__time
       vs-icon(color="var(--color-text-03)" icon="access_time" size="16px")
       | Karşılaştırma Tarihi: {{ $moment(post.comparison_date).format('DD.MM.YYYY') }}
+
+    vs-divider
+
+    // Comments
+    .post-card__comments
+      h3.my-base Yorum yaz
+      VueCusdis(:attrs="cusdis")
 
   // Actions
   vs-row.post-card__actions(vs-justify="flex-end")
@@ -44,10 +50,12 @@ vs-card.post-card
 
 <script>
 import VLazyImage from 'v-lazy-image'
+import VueCusdis from '@evillt/vue-cusdis/dist/V2.es'
 
 export default {
   components: {
-    VLazyImage
+    VLazyImage,
+    VueCusdis
   },
   props: {
     post: {
@@ -57,7 +65,14 @@ export default {
   },
   data() {
     return {
-      domain: process.env.DOMAIN
+      domain: process.env.DOMAIN,
+      cusdis: {
+        host: 'https://cusdis.com',
+        appId: '778b3aae-eca3-433a-b04e-7c5e2ba11daa',
+        pageId: this.post.slug,
+        pageTitle: this.post.title,
+        pageUrl: this.$route.fullPath
+      }
     }
   },
   computed: {
@@ -162,6 +177,64 @@ export default {
 
     i {
       margin-right: 0.4rem;
+    }
+  }
+
+  &__comments {
+    // cusdis override
+    .comment-main {
+      position: relative;
+      font-size: 0.9rem !important;
+
+      .cusdis {
+        &-reply-info {
+          input {
+            height: 2.4rem;
+            font-size: 0.8rem;
+            border: 2px solid var(--color-border-01);
+          }
+        }
+
+        &-field {
+          textarea {
+            font-size: 0.8rem;
+            border: 2px solid var(--color-border-01);
+            resize: vertical;
+          }
+
+          .submit-btn {
+            padding: 0.4rem 1rem;
+            color: #eee;
+            font-weight: normal;
+            font-size: 0.8rem;
+            background: #640064;
+            background-image: linear-gradient(30deg, rgba(var(--vs-dark), 1), rgba(var(--vs-dark), 0.5)) !important;
+            border-radius: var(--border-radius-base);
+            box-shadow: var(--box-shadow-1);
+          }
+        }
+
+        &-padding {
+          margin-top: var(--base-m-y) !important;
+          margin-bottom: 0 !important;
+          padding: 1rem;
+          background-color: rgba(243, 243, 243, 0.4);
+          border-radius: calc(var(--border-radius-base) * 4);
+        }
+
+        &-paginator {
+          margin-top: 1rem;
+        }
+
+        &-footer {
+          position: absolute;
+          top: -9999vh;
+          left: -9999vw;
+          visibility: hidden;
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
     }
   }
 
