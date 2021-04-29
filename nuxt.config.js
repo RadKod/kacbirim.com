@@ -134,22 +134,10 @@ module.exports = {
    ** See https://nuxtjs.org/api/configuration-components
    */
   components: [
-    '~/components',
-    '~/components/card',
-    '~/components/footer',
-    '~/components/header',
-    '~/components/loader',
-    '~/components/logo',
-    '~/components/post-list',
-    '~/components/spinner',
-    '~/components/widget',
-    '~/components/nav',
-    '~/components/tabbar',
-    '~/components/state-block',
-    '~/components/cover',
-    '~/components/list',
-    '~/components/skeleton',
-    '~/components/dropdown'
+    {
+      path: '~/components',
+      pathPrefix: false
+    }
   ],
 
   /*

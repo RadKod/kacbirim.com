@@ -52,7 +52,7 @@
     "cross-env": "^5.2.0",
     "express": "^4.17.1",
     "material-icons": "^0.5.3",
-    "nuxt": "^2.15.2",
+    "nuxt": "^2.15.4",
     "nuxt-izitoast": "^1.0.0",
     "remixicon": "^2.5.0",
     "v-dropdown-menu": "^1.3.1",
