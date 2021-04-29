@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       list: [
-        {
+        /* {
           title: 'Niye mi aldım 5 Mülyonu?',
           description: '5₺ değerinde kripto para bağışla. Küçük iyidir.',
           link: 'https://commerce.coinbase.com/checkout/6eee31be-dc6e-43b3-8688-6771fff58b99',
@@ -20,10 +20,10 @@ export default {
           description: '10₺ değerinde kripto para bağışla. Bi filtre kahve alabiliriz.',
           link: 'https://commerce.coinbase.com/checkout/9cb99a2f-f9d9-489b-b69a-810755738559',
           buttonText: '10₺'
-        },
+        }, */
         {
           title: '50₺ Bağışla',
-          description: '50₺ değerinde kripto para bağışla. Ekibin alayına filtre kahve alabiliriz.',
+          description: '50₺ değerinde kripto para bağışla.',
           link: 'https://commerce.coinbase.com/checkout/ea3686e7-6586-4dc1-bfd6-1135d516d7c7',
           buttonText: '50₺'
         },
