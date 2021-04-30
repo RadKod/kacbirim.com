@@ -76,6 +76,12 @@ module.exports = {
       { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/icon/favicon-96x96.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icon/favicon-16x16.png' },
       { rel: 'manifest', href: '/manifest.json' }
+    ],
+    script: [
+      {
+        src: 'https://cusdis.com/js/widget/lang/tr.js',
+        defer: true
+      }
     ]
   },
 
@@ -125,6 +131,7 @@ module.exports = {
     },
     { src: '@/plugins/vue-infinite-loading.js', ssr: false }, // Doc: https://peachscript.github.io/vue-infinite-loading/guide
     { src: '@/plugins/v-dropdown-menu.js' }, // https://github.com/RadKod/v-dropdown-menu
+    { src: '@/plugins/v-lazy-component.js', ssr: false }, // https://github.com/RadKod/v-lazy-component
     { src: '@/plugins/app/app-axios.js' },
     { src: '@/plugins/app/api-register.js' }
   ],
@@ -134,22 +141,10 @@ module.exports = {
    ** See https://nuxtjs.org/api/configuration-components
    */
   components: [
-    '~/components',
-    '~/components/card',
-    '~/components/footer',
-    '~/components/header',
-    '~/components/loader',
-    '~/components/logo',
-    '~/components/post-list',
-    '~/components/spinner',
-    '~/components/widget',
-    '~/components/nav',
-    '~/components/tabbar',
-    '~/components/state-block',
-    '~/components/cover',
-    '~/components/list',
-    '~/components/skeleton',
-    '~/components/dropdown'
+    {
+      path: '~/components',
+      pathPrefix: false
+    }
   ],
 
   /*

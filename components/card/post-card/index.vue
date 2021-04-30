@@ -41,7 +41,11 @@ vs-card.post-card
     // Comments
     .post-card__comments
       h3.my-base Yorum yaz
-      VueCusdis(:attrs="cusdis")
+      client-only
+        lazy-component
+          VueCusdis(:attrs="cusdis.config" :lang="cusdis.lang")
+          template(v-slot:placeholder)
+            span Loading comments...
 
   // Actions
   vs-row.post-card__actions(vs-justify="flex-end")
@@ -50,7 +54,7 @@ vs-card.post-card
 
 <script>
 import VLazyImage from 'v-lazy-image'
-import VueCusdis from '@evillt/vue-cusdis/dist/V2.es'
+import VueCusdis from '@evillt/vue-cusdis/dist/vue2.es'
 
 export default {
   components: {
@@ -67,11 +71,14 @@ export default {
     return {
       domain: process.env.DOMAIN,
       cusdis: {
-        host: 'https://cusdis.com',
-        appId: '778b3aae-eca3-433a-b04e-7c5e2ba11daa',
-        pageId: this.post.slug,
-        pageTitle: this.post.title,
-        pageUrl: this.$route.fullPath
+        config: {
+          host: 'https://cusdis.com',
+          appId: '778b3aae-eca3-433a-b04e-7c5e2ba11daa',
+          pageId: this.post.slug,
+          pageTitle: this.post.title,
+          pageUrl: this.$route.fullPath
+        },
+        lang: 'tr'
       }
     }
   },
