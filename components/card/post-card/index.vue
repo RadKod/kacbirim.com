@@ -7,6 +7,10 @@ vs-card.post-card
 
   // Media
   .post-card__media(slot="media")
+    // Observer
+    client-only
+      slot(name="observer")
+
     v-lazy-image.post-card__image.aspect-ratio(
       :src="post.image"
       draggable="false"
@@ -132,9 +136,24 @@ export default {
   border: 1px solid var(--color-border-01);
   box-shadow: var(--box-shadow-base);
 
+  &__observer {
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    background-color: #0f0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    @include center(true, true);
+  }
+
   &__header {
     display: flex;
     align-items: center;
+  }
+
+  &__media {
+    position: relative;
   }
 
   &__image {
