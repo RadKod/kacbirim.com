@@ -62,6 +62,7 @@
     "vue-clipboard2": "^0.3.1",
     "vue-content-loader": "0.2",
     "vue-infinite-loading": "^2.4.5",
+    "vue-observe-visibility": "^1.0.0",
     "vue-resize-text": "^0.1.1",
     "vue-sticky-directive": "^0.0.10",
     "vuesax": "3.12.2"
