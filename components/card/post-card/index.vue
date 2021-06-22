@@ -112,11 +112,11 @@ export default {
         text = `1 ay içinde ${purchasingPower.month_in} ${productType} ${productName} alınabilir.`
       } else {
         if (purchasingPower.year) {
-          text = `${purchasingPower.year} ${purchasingPower.month ? `yıl&nbsp;` : `yıl'da ${productName} alınabilir.`}`
+          text = `${purchasingPower.year} ${purchasingPower.month ? `yıl&nbsp;` : `yılda ${productName} alınabilir.`}`
         }
 
         if (purchasingPower.month) {
-          text += `${purchasingPower.month} ay'da ${productName} alınabilir.`
+          text += `${purchasingPower.month} ayda ${productName} alınabilir.`
         }
       }
 
