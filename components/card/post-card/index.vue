@@ -21,7 +21,7 @@ vs-card.post-card
     template(v-for="country in post.products_countries")
       .post-card__country
         span.d-block {{ country.name }} Asgari Ücret:
-          strong &nbsp; {{ country.wage }} {{ country.currency }}
+          strong &nbsp; {{ numberSeperator(country.wage) }}{{ country.currency }}
         span(
           v-html="calculatePurchasingPower({ productName: country.product_name, productType: country.product_type, purchasingPower: country.purchasing_power })"
         )
@@ -55,12 +55,14 @@ vs-card.post-card
 <script>
 import VLazyImage from 'v-lazy-image'
 import VueCusdis from '@evillt/vue-cusdis/dist/vue2.es'
+import { numberSeperator } from '@/mixins'
 
 export default {
   components: {
     VLazyImage,
     VueCusdis
   },
+  mixins: [numberSeperator],
   props: {
     post: {
       type: Object,
